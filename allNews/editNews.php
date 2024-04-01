@@ -23,7 +23,10 @@ if (!isset($id)) {
     $myrow = mysqli_fetch_array($result);
 
     do {
-        printf("<h3><a href='editNews.php?id=%s'>%s</a></h3>", $myrow['id'], $myrow['title']);
+        printf("
+        <h3>
+        <a href='editNews.php?id=%s'>%s</a>
+        </h3>", $myrow['id'], $myrow['title']);
     } while ($myrow = mysqli_fetch_array($result));
 } else {
     include('../db.php');
@@ -39,7 +42,7 @@ if (!isset($id)) {
         <br>
         <input type="text" name="image" value="$myrow2[image]">
         <br>
-        <input type="date" name="date" placeholder="Введите дату создания">
+        <input type="date" name="date" value="$myrow2[date]">
         <br>
         <button type="submit" name="id" value="$myrow2[id]">Изменить</button>
         <button type="reset">Очистить</button>
@@ -49,8 +52,6 @@ if (!isset($id)) {
 
 FORMA;
 }
-
-
 ?>
 </body>
 </html>

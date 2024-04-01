@@ -42,13 +42,11 @@ if (isset($_POST['id'])) {
 if (isset($title) && isset($description) && isset($image) && isset($date)) {
     $result = mysqli_query($connect, "UPDATE updatt SET title='$title', date='$date',
                                   description='$description', image='$image' WHERE id='$id' ");
-
     if ($result == true) {
         echo("Вы успешно обновили данные");
     } else {
         echo "Ошибка при обновлении данных: " . mysqli_error($connect);
     }
-
 } else {
     echo "qwerty";
 }

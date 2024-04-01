@@ -24,6 +24,7 @@
         <div class="add">
             <a href="createNews.php">Add new news</a>
         </div>
+        <br>
         <div class="update">
             <a href="editNews.php">Update</a>
         </div>
