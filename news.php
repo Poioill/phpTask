@@ -92,39 +92,52 @@ include ("db.php");
                     </div>
                     <div class="our_news">
                         <h4>Our News</h4>
-                        <div class="news">
-                            <img src="../images/apelsin.jpg" alt="small_picture">
-                            <div class="text-content">
-                                <h6>Quisque ornare pulvinar</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                        <div class="gray_line"></div>
-                        <span class="date">June 18, 2048</span>
-                        <div class="news bottom">
-                            <img src="../images/apelsin_1.jpg" alt="small_picture">
-                            <div class="text-content">
-                                <h6>Nullam consectetur</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Lorem ipsum dolor sit amet</p>
-                            </div>
-                        </div>
-                        <div class="gray_line"></div>
-                        <span class="date">June 18, 2048</span>
-                        <button class="gray">More</button>
-                        <div class="testimonials">
-                            <h4>Testimonals</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <i><strong>Steven - Web Designer</strong></i>
-                        </div>
-                        
+
+                        <?php  
+                            $result = mysqli_query($connect, "SELECT * from updatt");
+                            $myrow = mysqli_fetch_array($result);
+
+                            do {
+                                printf('
+                                <div class="news">
+                                    <img src="%s" alt="small_picture">
+                                    <div class="text-content">
+                                        <h6>%s</h6>
+                                        <p>%s</p>
+                                    </div>
+                                </div>
+                                <div class="gray_line"></div>
+                                <span class="date">%s</span>
+                                ', $myrow['image'], $myrow['title'], $myrow['description'],  $myrow['date']);
+                            }
+                            while ($myrow = mysqli_fetch_array($result));
+                        ?>
+                        <?php 
+                            $result = mysqli_query($connect, "SELECT * from updatt");
+                            $myrow = mysqli_fetch_array($result);
+                            
+                            printf('
+                            <button class="gray"><a href="allNews/allNews.php?id=%s">View All</a></button>
+                            ', $myrow['id']);
+                        ?>
+                        <?php 
+
+                            $result = mysqli_query($connect, "SELECT * from testimonials");
+                            $myrow = mysqli_fetch_array($result);
+
+                            do {
+                                printf('
+                                <div class="testimonials">
+                                    <h4>%s</h4>
+                                    <p>%s</p>
+                                    <i><strong>%s</strong></i>
+                                </div>
+                                ', $myrow['title'], $myrow['text'], $myrow['name']);
+                            }
+                            while ($myrow = mysqli_fetch_array($result));
+                        ?>
                 </div>
-
             </div>
-
         </div>
 
         <footer>

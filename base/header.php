@@ -9,6 +9,7 @@ include("../db.php");
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/core.css">
     <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/manageNews.css">
     <meta name="viewport" content="width=1200px, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>

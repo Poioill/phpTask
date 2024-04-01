@@ -1,3 +1,6 @@
+<?php
+include ("db.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +40,9 @@
                         <li class="menu_link">
                             <a href="contact.php">Contact</a>
                         </li>
+                        <li class="menu_link">
+                            <a href="allNews/manageNews.php">Manage news</a>
+                        </li>
                     </ul>
 
                 </div>
@@ -47,40 +53,34 @@
         <div class="gallery">
             <div class="container">
                 <div class="gallery_name">
-                    <h4>Our Gallery</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                        Ipsum has been the industry's standard dummy text ever
-                        since the 1500s, when an unknown printer took a galley o
-                        f type and scrambled it to make a type specimen book. It h
-                        as survived not only five centuries, but also the leap into
-                        electronic typesetting, remaining essentially unchanged.Validate <a href="https://translate.yandex.ru/">HTML</a> & <a href="https://translate.yandex.ru/">CSS</a>
-                    </p>
+                        <?php 
+                            $result = mysqli_query($connect, "SELECT * from gallery");
+                            $myrow = mysqli_fetch_array($result);
+
+                            do {
+                                printf('
+                                <h4>%s</h4>
+                                <p>%s</p>
+                                ', $myrow['title'], $myrow['text']);
+                            }
+                            while ($myrow = mysqli_fetch_array($result));
+                        ?>
                 </div>
                 <div class="card-container1">
-                    <div class="card1">
-                        <img src="../images/apelsin.jpg" alt="Фото 1">
-                        <div class="text">Project 1</div>
-                    </div>
-                    <div class="card1">
-                        <img src="../images/apelsin_1.jpg" alt="Фото 2">
-                        <div class="text">Project 2</div>
-                    </div>
-                    <div class="card1">
-                        <img src="../images/apelsin.jpg" alt="Фото 3">
-                        <div class="text">Project 3 </div>
-                    </div>
-                    <div class="card1">
-                        <img src="../images/apelsin_1.jpg" alt="Фото 4">
-                        <div class="text">Project 4</div>
-                    </div>
-                    <div class="card1">
-                        <img src="../images/apelsin.jpg" alt="Фото 5">
-                        <div class="text">Project 5</div>
-                    </div>
-                    <div class="card1">
-                        <img src="../images/apelsin_1.jpg" alt="Фото 6">
-                        <div class="text">Project 6</div>
-                    </div>
+                        <?php 
+                            $result = mysqli_query($connect, "SELECT * from galleryProjects");
+                            $myrow = mysqli_fetch_array($result);
+
+                            do {
+                                printf('
+                                <div class="card1">
+                                    <img src="%s" alt="Фото 1">
+                                    <div class="text">Project <span>%s</span></div>
+                                </div>
+                                ', $myrow['image'], $myrow['id']);
+                            }
+                            while ($myrow = mysqli_fetch_array($result));
+                        ?>
                 </div>
             </div>
         </div>

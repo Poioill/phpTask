@@ -9,6 +9,7 @@ include("db.php");
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/core.css">
     <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/aboutus.css">
     <meta name="viewport" content="width=1200px, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -51,20 +52,26 @@ include("db.php");
             <div class="container">
                 <div class="inner_aboutus">
                     <div class="who_we_are">
-                        <h4>Who We Are</h4>
-                        <div class="text_img">
-                            <img src="../images/armchair.jpg" alt="armchair">
-                            <p><i>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</i>
-                            <a href="../index.html">Light Gray Template</a> is provided for your personal or commercial websites. Validate
-                                <a href="">XTML</a> & <a href="../index.html">CSS</a>. Credits go to <a href="../index.html">Free Photos</a> for photos and
-                                <a href="../index.html">Free Vector</a> for icons used in this template.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text Lorem Ipsum has been the industry's standard dummy text  </p>
-                        </div>
-                        <div class="service">
-                            <h4>Our Service</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deleniti fugit laboriosam nulla perspiciatis quas
-                                quod ratione suscipit ut, vero? Asperiores deleniti dolor ea enim facilis iste minus sit voluptas?
-                                Amet blanditiis dolore fuga laborum maiores necessitatibus nesciunt pariatur sapiente tempora voluptatibus </p>
-                        </div>
+                        
+                        <?php  
+                            $result = mysqli_query($connect, "SELECT * from aboutus");
+                            $myrow = mysqli_fetch_array($result);
+
+                            do {
+                                printf('
+                                <h4>%s</h4>
+                                <div class="text_img">
+                                    <img src="%s" alt="armchair">
+                                    <p><i>%s</i>%s</p>
+                                </div>
+                                <div class="service">
+                                    <h4>Our Service</h4>
+                                    <p>%s</p>
+                                </div>
+                                ', $myrow['title'], $myrow['image'], $myrow['text_one'],  $myrow['text_two'],  $myrow['service']);
+                            }
+                            while ($myrow = mysqli_fetch_array($result));
+                        ?>
                         <div class="check_point">
                             <ul class="left">
                                 <li><img src="../images/check.png" alt="check">Sent elementum velit in tortor faucibus</li>
@@ -85,7 +92,7 @@ include("db.php");
                     </div>
                     <div class="our_news">
                         <h4>Our News</h4>
-                        <?php 
+                        <?php  
                             $result = mysqli_query($connect, "SELECT * from updatt");
                             $myrow = mysqli_fetch_array($result);
 
@@ -111,16 +118,22 @@ include("db.php");
                             printf('
                             <button class="gray"><a href="allNews/allNews.php?id=%s">View All</a></button>
                             ', $myrow['id']);
-
                         ?>
-                        <div class="testimonials">
-                            <h4>Testimonals</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <i><strong>Steven - Web Designer</strong></i>
-                        </div>
+                       <?php 
+                            $result = mysqli_query($connect, "SELECT * from testimonials");
+                            $myrow = mysqli_fetch_array($result);
+
+                            do {
+                                printf('
+                                <div class="testimonials">
+                                    <h4>%s</h4>
+                                    <p>%s</p>
+                                    <i><strong>%s</strong></i>
+                                </div>
+                                ', $myrow['title'], $myrow['text'], $myrow['name']);
+                            }
+                            while ($myrow = mysqli_fetch_array($result));
+                        ?>
                     </div>
                 </div>
             </div>
