@@ -1,0 +1,26 @@
+.success__wrapper{
+    width: 900px;
+    margin: 30px auto;
+    font-family: Inter;
+    color: rgb(12, 32, 50);
+}
+.success__wrapper h1{
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+.suc__man{
+    background-color: rgb(140, 130, 215);
+    padding: 15px 10px;
+    color: white;
+    font-size: 18px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+.suc__btn{
+    background-color: transparent;
+    padding: 15px 10px;
+    border: 1px solid rgb(146, 64, 64);
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+}

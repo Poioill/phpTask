@@ -10,6 +10,7 @@ include("../db.php");
     <link rel="stylesheet" href="../css/core.css">
     <link rel="stylesheet" href="../css/header_footer.css">
     <link rel="stylesheet" href="../css/manageNews.css">
+    <link rel="stylesheet" href="../css/success.css">
     <meta name="viewport" content="width=1200px, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -40,7 +41,7 @@ include("../db.php");
                             <a href="../contact.php">Contact</a>
                         </li>
                         <li class="menu_link">
-                            <a href="../allNews/manageNews.php">Manage news</a>
+                            <a href="../myregister/login.php">Authorization</a>
                         </li>
                     </ul>
 

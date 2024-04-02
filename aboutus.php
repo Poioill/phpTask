@@ -25,22 +25,22 @@ include("db.php");
                         </div>
                     <ul class="menu">
                         <li class="menu_link shadow">
-                            <a href="../index.php">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li class="menu_link shadow">
-                            <a href="../news.php">Latest News</a>
+                            <a href="news.php">Latest News</a>
                         </li>
                         <li class="menu_link shadow">
-                            <a href="../porfolio.php">Portfolio</a>
+                            <a href="porfolio.php">Portfolio</a>
                         </li>
                         <li class="menu_link shadow">
-                            <a href="../aboutus.php">About Us</a>
+                            <a href="aboutus.php">About Us</a>
                         </li>
                         <li class="menu_link">
-                            <a href="../contact.php">Contact</a>
+                            <a href="contact.php">Contact</a>
                         </li>
                         <li class="menu_link">
-                            <a href="../allNews/manageNews.php">Manage news</a>
+                            <a href="myregister/login.php">Authorization</a>
                         </li>
                     </ul>
 

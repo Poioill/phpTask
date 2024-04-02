@@ -37,7 +37,7 @@
                             <a href="contact.php">Contact</a>
                         </li>
                         <li class="menu_link">
-                            <a href="allNews/manageNews.php">Manage news</a>
+                            <a href="myregister/login.php">Authorization</a>
                         </li>
                     </ul>
 

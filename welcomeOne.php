@@ -40,6 +40,9 @@ include ("db.php");
                         <li class="menu_link">
                             <a href="contact.php">Contact</a>
                         </li>
+                        <li class="menu_link">
+                            <a href="/myregister/login.php">Authorization</a>
+                        </li>
                     </ul>
 
                 </div>
